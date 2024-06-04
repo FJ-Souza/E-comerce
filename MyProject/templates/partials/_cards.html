@@ -1,0 +1,24 @@
+{% load static %}
+{% for card in info %}
+<div class="col-md-3 col-sm-4">
+	<div class="single-new-arrival">
+		<div class="single-new-arrival-bg">
+			<img src="{{ card.path.url }}" alt="new-arrivals images">
+			<div class="single-new-arrival-bg-overlay"></div>
+			<div class="new-arrival-cart">
+                <p>
+                    <span class="lnr lnr-cart"></span>
+                    <a href="#">add <span>to </span> cart</a>
+                </p>
+                <p class="arrival-review pull-right">
+                    <span class="lnr lnr-heart"></span>
+                    <span class="lnr lnr-frame-expand"></span>
+                </p>
+			</div>
+		</div>
+		<h4><a href="#">{{card.name}}</a></h4>
+		<p class="arrival-product-description">Marca: {{card.description}}</p>
+		<p class="arrival-product-price">R${{card.price}}</p>
+	</div>
+</div>
+{% endfor %}

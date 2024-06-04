@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>Adicionar Produto</title>
+{% endblock %}
+{% block content %}
+    <div>
+        <h1>Cadastro dos Produtos</h1>
+        <form action="{% url 'adicionarProduct' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% for fields in form.visible_fields %}
+            <label>{{fields.label}}</label>
+            {{fields}}
+            {% endfor %}
+            <button class="btn btn-outline-primary" type="submit">Cadastro</button>
+        </form>
+    </div>
+<!--Footer-->
+    {% include 'partials/_footer.html' %}
+{% endblock %}
+<!--Fim-->
